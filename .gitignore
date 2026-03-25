@@ -1,6 +1,8 @@
 node_modules/
 dist/
 build/
+!backend/build/
+!backend/build/**
 .next/
 .cache/
 
