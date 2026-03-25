@@ -1,0 +1,667 @@
+@import './styles/index.css';
+
+html, body, #root {
+  min-height: 100%;
+}
+
+body {
+  background:
+    radial-gradient(circle at top left, rgba(74, 222, 128, 0.15), transparent 32%),
+    radial-gradient(circle at top right, rgba(245, 158, 11, 0.12), transparent 28%),
+    linear-gradient(180deg, #09110c 0%, #0a0f0d 42%, #09110c 100%);
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.text-link {
+  color: var(--accent);
+  font-weight: 700;
+  margin-left: 0.35rem;
+}
+
+.public-page {
+  position: relative;
+}
+
+.public-page::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 34px 34px;
+  pointer-events: none;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.45), transparent 88%);
+}
+
+.auth-page,
+.pricing-page {
+  padding: 2.5rem 0 4rem;
+}
+
+.auth-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(360px, 0.95fr);
+  gap: 1.5rem;
+  align-items: stretch;
+  min-height: calc(100vh - 130px);
+}
+
+.auth-aside,
+.auth-card,
+.spotlight-card,
+.process-card,
+.pool-card,
+.charity-tile,
+.pricing-status-card,
+.plan-card,
+.pricing-summary-card,
+.home-cta-banner {
+  box-shadow: var(--shadow);
+}
+
+.auth-aside {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem;
+  border: 1px solid rgba(74, 222, 128, 0.16);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at top right, rgba(74, 222, 128, 0.2), transparent 42%),
+    linear-gradient(145deg, rgba(16, 25, 20, 0.98), rgba(11, 19, 14, 0.96));
+}
+
+.auth-kicker,
+.section-eyebrow,
+.hero-tag,
+.spotlight-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(74, 222, 128, 0.12);
+  border: 1px solid rgba(74, 222, 128, 0.2);
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.auth-title,
+.hero-title,
+.pricing-hero h1,
+.pricing-status-card h1,
+.home-cta-banner h2 {
+  font-size: clamp(2.4rem, 5vw, 4.8rem);
+  line-height: 0.98;
+  margin: 1rem 0;
+}
+
+.auth-copy,
+.hero-copy,
+.pricing-hero p,
+.pricing-status-card p,
+.home-cta-banner p {
+  max-width: 60ch;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.auth-chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.auth-chip {
+  padding: 0.65rem 0.95rem;
+  border-radius: 14px;
+  background: rgba(9, 15, 13, 0.55);
+  border: 1px solid rgba(74, 222, 128, 0.12);
+  color: var(--text);
+  font-size: 0.9rem;
+}
+
+.auth-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.85rem;
+  margin: 1.75rem 0;
+}
+
+.auth-stat-card {
+  padding: 1rem;
+  border-radius: 18px;
+  background: rgba(9, 15, 13, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.auth-stat-card strong,
+.hero-metric strong,
+.spotlight-stat strong,
+.pricing-summary-card strong {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  color: var(--text);
+}
+
+.auth-stat-card span,
+.hero-metric span,
+.spotlight-stat span,
+.pricing-summary-card span {
+  color: var(--dim);
+  font-size: 0.82rem;
+}
+
+.auth-note-list {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.auth-note {
+  padding: 0.95rem 1rem;
+  border-left: 3px solid var(--gold);
+  border-radius: 14px;
+  background: rgba(245, 158, 11, 0.08);
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.auth-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+  border-radius: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: linear-gradient(180deg, rgba(23, 34, 27, 0.98), rgba(17, 26, 20, 0.96));
+}
+
+.auth-card-head h2 {
+  font-size: 2rem;
+  margin-bottom: 0.4rem;
+}
+
+.auth-card-head p,
+.auth-footer {
+  color: var(--muted);
+}
+
+.auth-form {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.auth-submit {
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.auth-footer {
+  margin-top: 1.5rem;
+  font-size: 0.92rem;
+}
+
+.home-page {
+  padding-bottom: 4rem;
+}
+
+.home-hero {
+  padding: 3.5rem 0 2rem;
+}
+
+.home-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.hero-copy-panel,
+.spotlight-card,
+.hero-score-strip,
+.pricing-summary-card {
+  border-radius: 28px;
+}
+
+.hero-copy-panel {
+  padding: 2rem 0;
+}
+
+.hero-copy {
+  margin-bottom: 1.5rem;
+}
+
+.hero-actions,
+.home-cta-actions,
+.pricing-status-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.hero-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+  margin-top: 2rem;
+}
+
+.hero-metric {
+  padding: 1rem;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(18, 28, 22, 0.85);
+}
+
+.hero-spotlight {
+  display: grid;
+  gap: 1rem;
+}
+
+.spotlight-card {
+  padding: 1.6rem;
+  border: 1px solid rgba(74, 222, 128, 0.16);
+  background:
+    radial-gradient(circle at top right, rgba(245, 158, 11, 0.12), transparent 34%),
+    linear-gradient(160deg, rgba(22, 32, 25, 0.98), rgba(13, 20, 16, 0.96));
+}
+
+.spotlight-card h2 {
+  font-size: 2rem;
+  margin: 0.85rem 0;
+}
+
+.spotlight-card p {
+  color: var(--muted);
+  margin-bottom: 1.5rem;
+}
+
+.spotlight-stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.spotlight-stat {
+  padding: 0.9rem;
+  border-radius: 18px;
+  background: rgba(9, 15, 13, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.hero-score-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.8rem;
+  padding: 1rem 1.2rem;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(15, 22, 18, 0.9);
+  text-align: center;
+}
+
+.hero-score-strip span {
+  color: var(--dim);
+  font-size: 0.8rem;
+}
+
+.hero-score-strip strong {
+  color: var(--text);
+  font-size: 1rem;
+}
+
+.home-section {
+  padding: 2.25rem 0;
+}
+
+.home-section--muted {
+  background: linear-gradient(180deg, rgba(17, 26, 20, 0.9), rgba(10, 15, 13, 0.6));
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.section-header,
+.section-header--centered {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.section-header--centered {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.section-header h2,
+.section-header--centered h2,
+.pricing-hero h1,
+.pricing-status-card h1 {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+}
+
+.section-header p,
+.section-header--centered p {
+  color: var(--muted);
+  max-width: 60ch;
+}
+
+.process-grid,
+.pool-grid,
+.charity-grid,
+.plans-grid,
+.pricing-summary {
+  display: grid;
+  gap: 1rem;
+}
+
+.process-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.process-card,
+.pool-card,
+.charity-tile,
+.plan-card,
+.pricing-summary-card,
+.pricing-notice,
+.pricing-status-card,
+.home-cta-banner {
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: linear-gradient(180deg, rgba(26, 42, 30, 0.96), rgba(17, 26, 20, 0.96));
+}
+
+.process-card,
+.pool-card,
+.charity-tile {
+  padding: 1.25rem;
+  border-radius: 22px;
+}
+
+.process-step {
+  display: inline-flex;
+  width: 2.2rem;
+  height: 2.2rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  margin-bottom: 1rem;
+  background: rgba(74, 222, 128, 0.12);
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.process-card h3,
+.pool-card strong,
+.charity-tile h3,
+.plan-card h2 {
+  font-size: 1.4rem;
+}
+
+.process-card p,
+.pool-card p,
+.charity-tile p,
+.plan-card__summary,
+.pricing-action-bar p {
+  color: var(--muted);
+}
+
+.pool-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.pool-label {
+  display: block;
+  margin-bottom: 0.8rem;
+  color: var(--dim);
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+}
+
+.pool-card strong {
+  display: block;
+  margin-bottom: 0.6rem;
+  color: var(--gold);
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+}
+
+.charity-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.charity-tile__tag {
+  display: inline-flex;
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  margin-bottom: 1rem;
+  background: rgba(74, 222, 128, 0.12);
+  color: var(--accent);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.charity-tile__meta {
+  margin-top: 1rem;
+  color: var(--gold);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.charity-tile--placeholder {
+  opacity: 0.72;
+}
+
+.home-cta-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.75rem;
+  border-radius: 30px;
+  background:
+    radial-gradient(circle at left center, rgba(74, 222, 128, 0.12), transparent 28%),
+    linear-gradient(140deg, rgba(24, 35, 28, 0.98), rgba(12, 18, 14, 0.96));
+}
+
+.pricing-shell {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.pricing-hero {
+  margin-bottom: 1.5rem;
+}
+
+.pricing-notice,
+.pricing-status-card {
+  padding: 1.2rem 1.4rem;
+  border-radius: 24px;
+}
+
+.pricing-notice {
+  margin-bottom: 1rem;
+  color: var(--muted);
+  border-color: rgba(96, 165, 250, 0.2);
+  background: rgba(96, 165, 250, 0.08);
+}
+
+.plans-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.plan-card {
+  display: grid;
+  gap: 1rem;
+  padding: 1.35rem;
+  border-radius: 24px;
+  text-align: left;
+}
+
+.plan-card.is-selected {
+  border-color: rgba(74, 222, 128, 0.45);
+  transform: translateY(-2px);
+}
+
+.plan-card.is-free {
+  background:
+    radial-gradient(circle at top right, rgba(96, 165, 250, 0.1), transparent 30%),
+    linear-gradient(180deg, rgba(24, 33, 38, 0.96), rgba(16, 24, 29, 0.96));
+}
+
+.plan-card__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.plan-card__label {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.76rem;
+  font-weight: 700;
+}
+
+.plan-card__top h2 {
+  margin-bottom: 0.35rem;
+}
+
+.plan-card__top p,
+.plan-card__footer span {
+  color: var(--dim);
+}
+
+.plan-badge {
+  padding: 0.45rem 0.7rem;
+  border-radius: 999px;
+  background: rgba(245, 158, 11, 0.12);
+  color: var(--gold);
+  font-size: 0.75rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.plan-card__points {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.plan-point {
+  padding: 0.7rem 0.85rem;
+  border-radius: 16px;
+  background: rgba(9, 15, 13, 0.48);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  color: var(--text);
+  font-size: 0.9rem;
+}
+
+.plan-card__footer {
+  padding-top: 0.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.pricing-summary {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 1rem 0 1.5rem;
+}
+
+.pricing-summary-card {
+  padding: 1.1rem;
+  border-radius: 22px;
+}
+
+.pricing-action-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.4rem 0 0.2rem;
+}
+
+.pricing-action-bar p {
+  max-width: 52ch;
+}
+
+@media (max-width: 1080px) {
+  .auth-layout,
+  .home-hero-grid,
+  .plans-grid,
+  .charity-grid,
+  .process-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .home-cta-banner,
+  .pricing-action-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 720px) {
+  .auth-layout,
+  .home-hero-grid,
+  .process-grid,
+  .pool-grid,
+  .charity-grid,
+  .plans-grid,
+  .pricing-summary,
+  .hero-meta-grid,
+  .spotlight-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .auth-page,
+  .pricing-page {
+    padding-top: 1.25rem;
+  }
+
+  .auth-aside,
+  .auth-card,
+  .spotlight-card,
+  .home-cta-banner {
+    border-radius: 22px;
+  }
+
+  .auth-title,
+  .hero-title,
+  .pricing-hero h1,
+  .pricing-status-card h1,
+  .home-cta-banner h2 {
+    font-size: 2.4rem;
+  }
+
+  .hero-actions,
+  .home-cta-actions,
+  .pricing-status-actions {
+    width: 100%;
+  }
+
+  .hero-actions .btn,
+  .home-cta-actions .btn,
+  .pricing-status-actions .btn,
+  .pricing-action-bar .btn {
+    width: 100%;
+  }
+}
